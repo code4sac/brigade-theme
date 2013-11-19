@@ -3,28 +3,204 @@
  */
 
 @import "bootstrap/bootstrap.less";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+@light: #E4E8EB;
+@white: white;
 
 /* ==========================================================================
    Base
    ========================================================================== */
 
-body { }
+body { font-family: 'Open Sans', sans-serif; }
 
+.btn-primary, .btn-outline {
+   border: 3px solid @brand-primary;
+   border-radius: 3px;
+   color: @white;
+   font-weight: 700;
+   font-size: 15px;
+   text-transform: uppercase;
 
+   .glyphicon {
+      font-size: 24px;
+      font-weight: 100;
+      float: left;
+      position: relative;
+      margin: -4px 14px 0 0px;
+   }
+
+   &:hover {
+      color: @white;
+      border-color: @brand-primary;
+      background-color: @brand-primary;
+
+      .glyphicon {
+         color: lighten(@brand-dark, 10%);
+      }
+   }
+}
+
+.btn-primary:hover {
+   
+}
+
+.btn-outline {
+   background: transparent;
+}
 
 /* ==========================================================================
    Header
    ========================================================================== */
 
-.banner { }
+.navbar-brand {
+   padding-top: 17px;
+   padding-bottom: 0;
+   
+   img {
+      width: 100px;
+   }      
+}
+.banner {
+   background-color: @brand-dark;
+   border: 0;
+   margin-bottom: 0;
+   
+   #menu-main > li {
+      position: relative;
+      border-top: 3px solid transparent;
 
+       > a {
+         padding: 19px 15px 22px;
+         
+         color: @white;
+         transition: all 150ms ease-in;
 
+         &:hover {
+            background: transparent;
+         }
+      }
+      
+      &:hover {
+            border-top: 3px solid @brand-primary;
+
+            .caret {
+               border-top-color: @brand-primary;
+               border-bottom-color: @brand-primary;
+            }
+      }
+      
+      .caret {
+         border-top-color: @white;
+         border-bottom-color: @white;
+      }
+   }
+}
+
+.dropdown:hover > ul {
+   display: block;
+   top: 100%;
+}
+
+.navbar-nav .dropdown-menu {
+   left: 0;
+}
+
+.dropdown-menu {
+   border: 0;
+
+   li a {
+      padding: 6px 20px;
+   }
+}
 
 /* ==========================================================================
-   Content
+   Landing Page
    ========================================================================== */
 
-.content { }
+.landing-header {
+   background-size: cover;
+   color: @white;
+   text-align: center;
+   padding: 17px;
+   
+   .landing-text-wrapper {
+      padding: 35px 0 50px;
+      background-color: fadeout(@brand-primary, 65%);
+      text-shadow: 1px 1px 3px rgba(0,0,0,.25);
+
+      h1 {
+         text-transform: uppercase;
+         font-weight: 700;
+         font-size: 32px;
+
+         span {
+             font-weight: 400;
+         }
+      }
+      p {
+         padding: 5px 10px 15px;
+         font-size: 16px;
+         line-height: 1.7em;
+      }
+   }
+}
+
+.landing-actions {
+   
+}
+
+/* ==========================================================================
+   Single
+   ========================================================================== */
+
+.type-post {
+   margin-bottom: 50px;
+
+   h5.date {
+      color: @gray-lighter;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-bottom: 0px;
+   }
+   .glyphicon-time {
+      color: @gray-lighter;
+      margin-right: 5px;
+      margin-top: -1px;
+   }
+   h2.title {
+      margin: 7px 0 14px;
+      font-size: 26px;
+      font-weight: 700;
+      text-transform: uppercase;
+   }
+   .meta {
+      min-height: 40px;
+
+      .author-image img {
+         margin-right: 6px;
+         border-radius: 50%;
+      }
+      span, a {
+         color: @gray;
+      }
+   }
+   .btn-xs {
+      font-size: 12px;
+      padding: 3px 10px;
+      color: @brand-primary;
+      margin-top: 6px;
+
+      &:hover {
+         color: @white;
+      }
+   }
+   > p {
+      line-height: 1.6em;
+      font-size: 15px;
+   }
+}
 
 
 
@@ -63,7 +239,9 @@ body { }
    Footer
    ========================================================================== */
 
-.content-info { }
+.content-info { 
+   background-color: @brand-dark;
+}
 
 
 
